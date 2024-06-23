@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "ViewCustomerRequest";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Customer Request About Car Washing</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/AWAdmin/Dashboard/Index">Home</a></li>
+                    <li class="breadcrumb-item active">CustomerRequestAboutCarWashing</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Description</td>
+        <td>Action</td>
+    </tr>
+    @foreach (var item in ViewBag.request)
+    {
+        <tr>
+            <td>@item.rname</td>
+            <td>@item.remail</td>
+            <td>@item.rdes</td>
+
+            <td>
+
+                <span style="font-size: 19px;align-content:center;"><a href="~/AWAdmin/QueryStatus/DeleteCustomerRequest/@item.rid">Delete</a></span>&nbsp;&nbsp;
+
+            </td>
+        </tr>
+    }
+
+</table>

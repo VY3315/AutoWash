@@ -1,0 +1,116 @@
+﻿@model AutoWash.Models.EF.tbl_WashingPointDetails
+@{
+    ViewBag.Title = "AddEditWashingPointDetails";
+}
+
+@*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Washing point Detail</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/AWAdmin/Dashboard/Index">Home</a></li>
+                    <li class="breadcrumb-item active">WashingpointDetail</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+
+<form action="AddEditWashingPointDetails" method="post" style="padding: 20px 20px 0px 20px;">
+
+    @if (Model != null && Model.WPid > 0)
+    {
+        <input type="text" class="form-control" id="WPid" name="WPid" placeholder="Pls Enter Washing Point Subject" value="@Model.WPid" hidden>
+
+        <div class="form-group row">
+            <label for="WPsubject" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="WPsubject" name="WPsubject" placeholder="Pls Enter Washing Point Subject" value="@Model.WPsubject" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="WPsubsubject" class="col-sm-2 col-form-label">Sub-Subject</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="WPsubsubject" name="WPsubsubject" placeholder="Pls Enter Washing Point Sub-Subject" value="@Model.WPsubsubject" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="WPaddress" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="WPaddress" name="WPaddress" placeholder="Pls Enter Adress" value="@Model.WPaddress" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="WPnumber" class="col-sm-2 col-form-label">Contact Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="WPnumber" name="WPnumber" placeholder="Pls Enter Contact Number" value="@Model.WPnumber" required>
+            </div>
+        </div>
+
+        <br />
+        <div class="form-group row" style="padding:0px">
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-info">Update</button>
+                </div>
+            </div>
+
+
+        </div>
+    }
+    else
+    {
+        <div class="form-group row">
+            <label for="WPsubject" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="WPsubject" name="WPsubject" placeholder="Pls Enter Washing Point Subject" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="WPsubsubject" class="col-sm-2 col-form-label">Sub-Subject</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="WPsubsubject" name="WPsubsubject" placeholder="Pls Enter Washing Point Sub-Subject" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="WPaddress" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="WPaddress" name="WPaddress" placeholder="Pls Enter Adress" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="WPnumber" class="col-sm-2 col-form-label">Contact Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="WPnumber" name="WPnumber" placeholder="Pls Enter Contact Number" required>
+            </div>
+        </div>
+
+        <div class="content-header">
+            <div @*class="container-fluid"*@>
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-info">Submit</button>
+
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <!-- Right side content -->
+                        <a href="~/AWAdmin/ManageAboutUsDetails/ViewAllDetails" class="btn btn-success">View List</a>
+                    </div>
+                </div><!-- /.row -->
+                <!-- Left side content -->
+                <!-- Place your content here that you want to align to the left -->
+
+            </div><!-- /.container-fluid -->
+        </div>
+    }
+</form>

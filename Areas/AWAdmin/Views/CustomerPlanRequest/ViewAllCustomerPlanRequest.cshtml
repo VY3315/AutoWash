@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "ViewAllCustomerPlanRequest";
+}
+
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Requested Plan Status</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/AWAdmin/Dashboard/Index">Home</a></li>
+                    <li class="breadcrumb-item active">RequestedPlanStatus</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<br />
+<div style="padding: 0px 20px 0px 20px ">
+    <table class="table table-hover">
+        <tr>
+            <td>Name</td>
+            <td>Plan</td>
+            <td>Price</td>
+            <td>All Services</td>
+            <td></td>
+
+        </tr>
+
+        @foreach (var item in ViewBag.CustomerRequest)
+        {
+            <tr>
+                <td>@item.CPname</td>
+                <td>@item.CPplan</td>
+                <td>@item.CPprice</td>
+                <td>@item.CPservices</td>
+                <td>
+                    <span style="font-size: 19px;align-content:center;"><a href="DeleteCustomerPlanRequest/@item.CPid">Delete</a></span>&nbsp;&nbsp;
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

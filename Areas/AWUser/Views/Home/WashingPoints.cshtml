@@ -1,0 +1,81 @@
+﻿@model AutoWash.Models.EF.AllDetails
+
+@{
+    ViewBag.Title = "WashingPoints";
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Washing Points</h2>
+            </div>
+            <div class="col-12">
+                <a href="">Home</a>
+                <a href="">Location</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Location Start -->
+<div class="location">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="section-header text-left">
+                    <p>Washing Points</p>
+                    <h2>@Model.LastWashingPoint.WPsubject </h2>
+                </div>
+                <div class="row">
+                    @foreach (var item in Model.WashingPoint)
+                    {
+                        <div class="col-md-6">
+                            <div class="location-item">
+                                <i class="fa fa-map-marker-alt"></i>
+                                <div class="location-text">
+                                    <h3>@item.WPsubsubject</h3>
+                                    <p>@item.WPaddress</p>
+                                    <p><strong>Call:</strong>@item.WPnumber</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="location-form">
+                    <h3>Request for a car wash</h3>
+                    @if (TempData["SentMessage"] != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @TempData["SentMessage"]
+                        </div>
+                    }
+                    @* Error *@
+
+                    <form method="post" action="WashingPoints">
+                        <div class="control-group">
+                            <input type="text" id="rname" name="rname" class="form-control" placeholder="Name" required="required" />
+                        </div>
+                        <div class="control-group">
+                            <input type="email" id="remail" name="remail" class="form-control" placeholder="Email" required="required" />
+                        </div>
+                        <div class="control-group">
+                            <textarea class="form-control" id="rdes" name="rdes" placeholder="Description" required="required"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-custom" id="rsubmit" type="submit">Send Request</button>
+                        </div>
+                    </form>
+
+                    @* Error End *@
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Location End -->

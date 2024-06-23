@@ -1,0 +1,217 @@
+﻿@model AutoWash.Models.EF.AllDetails
+
+@{
+    ViewBag.Title = "Price";
+}
+
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Washing Plan</h2>
+            </div>
+            <div class="col-12">
+                <a href="">Home</a>
+                <a href="">Price</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Price Start -->
+<div class="price">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Washing Plan</p>
+            <h2>Choose Your Plan</h2>
+        </div>
+        <div class="col">
+
+            @if (!string.IsNullOrEmpty(ViewBag.SentMessage))
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewBag.SentMessage
+                </div>
+            }
+        </div>
+        <div class="row">
+
+
+            @if (Model.LastBasicCleantables != null)
+            {
+                <div class="col-md-4">
+                    <div class="price-item">
+                        <div class="price-header">
+                            <h3>@Model.LastBasicCleantables.bplan</h3>
+                            <h2><span>$</span><strong>@Model.LastBasicCleantables.bprice</strong><span>.99</span></h2>
+                        </div>
+                        @if (Model.LastBasicCleantables.bid > 0)
+                        {
+                            <div class="price-body">
+                                <ul>
+                                    @foreach (string str in ViewBag.services)
+                                    {
+                                        var selectedService = Model.LastBasicCleantables.bservices.Split(',');
+                                        bool isselected = false;
+                                        foreach (var selected in selectedService)
+                                        {
+                                            if (selected.ToString().Trim() == str)
+                                            {
+                                                isselected = true;
+                                            }
+                                        }
+                                        if (isselected)
+                                        {
+
+                                            <li><i class="far fa-check-circle"></i>@str</li>
+
+
+                                        }
+                                        else
+                                        {
+
+                                            <li><i class="far fa-times-circle"></i>@str</li>
+
+                                        }
+                                    }
+                                </ul>
+
+                            </div>
+                        }
+                        <div class="price-footer">
+                            <a class="btn btn-custom" href="~/AWAdmin/CustomerPlanRequest/GetBasicCleaningRequest">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger">
+                    @ViewBag.Error
+                </div>
+            }
+
+
+            @if (Model.LastPrimeCleantables != null)
+            {
+                <div class="col-md-4">
+                    <div class="price-item featured-item">
+                        <div class="price-header">
+                            <h3>@Model.LastPrimeCleantables.pplan</h3>
+                            <h2><span>$</span><strong>@Model.LastPrimeCleantables.pprice</strong><span>.99</span></h2>
+                        </div>
+                        @if (Model.LastPrimeCleantables.pid > 0)
+                        {
+                            <div class="price-body">
+                                <ul>
+                                    @foreach (string str in ViewBag.services)
+                                    {
+                                        var selectedService = Model.LastPrimeCleantables.pservices.Split(',');
+                                        bool isselected = false;
+                                        foreach (var selected in selectedService)
+                                        {
+                                            if (selected.ToString().Trim() == str)
+                                            {
+                                                isselected = true;
+                                            }
+                                        }
+                                        if (isselected)
+                                        {
+
+                                            <li><i class="far fa-check-circle"></i>@str</li>
+
+
+                                        }
+                                        else
+                                        {
+
+                                            <li><i class="far fa-times-circle"></i>@str</li>
+
+                                        }
+                                    }
+
+                                </ul>
+                            </div>
+
+                            <div class="price-footer">
+                                <a class="btn btn-custom" href="~/AWAdmin/CustomerPlanRequest/GetPremiumCleaningRequest">Book Now</a>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="alert alert-danger">
+                    @ViewBag.Error
+                </div>
+            }
+
+            @if (Model.LastComplexCleantables != null)
+            {
+                <div class="col-md-4">
+                    <div class="price-item">
+                        <div class="price-header">
+                            <h3>@Model.LastComplexCleantables.cplan</h3>
+                            <h2><span>$</span><strong>@Model.LastComplexCleantables.cprice</strong><span>.99</span></h2>
+                        </div>
+                        @if (Model.LastComplexCleantables.cid > 0)
+                        {
+                            <div class="price-body">
+                                <ul>
+                                    @foreach (string str in ViewBag.services)
+                                    {
+                                        var selectedService = Model.LastComplexCleantables.cservices.Split(',');
+                                        bool isselected = false;
+                                        foreach (var selected in selectedService)
+                                        {
+                                            if (selected.ToString().Trim() == str)
+                                            {
+                                                isselected = true;
+                                            }
+                                        }
+                                        if (isselected)
+                                        {
+
+                                            <li><i class="far fa-check-circle"></i>@str</li>
+
+
+                                        }
+                                        else
+                                        {
+
+                                            <li><i class="far fa-times-circle"></i>@str</li>
+
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        }
+
+                        <div class="price-footer">
+                            <a class="btn btn-custom" href="~/AWAdmin/CustomerPlanRequest/GetComplexCleaningRequest">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            else
+            {
+                <div class="alert alert-danger">
+                    @ViewBag.Error
+                </div>
+            }
+
+
+        </div>
+
+
+    </div>
+</div>
+<!-- Price End -->
+
+

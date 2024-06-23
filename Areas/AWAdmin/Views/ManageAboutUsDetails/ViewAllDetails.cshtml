@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "ViewAllDetails";
+}
+<br />
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">WashingPoint Detail</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <!-- Right side content -->
+                <a href="~/AWAdmin/ManageAboutUsDetails/AddEditWashingPointDetails" class="btn btn-success">Add Washing Point Details</a>
+            </div>
+        </div><!-- /.row -->
+        <!-- Left side content -->
+        <!-- Place your content here that you want to align to the left -->
+
+    </div><!-- /.container-fluid -->
+</div>
+
+
+<table class="table table-hover">
+    <tr>
+        <td>Subject</td>
+        <td>Sub-Subject</td>
+        <td>Address</td>
+        <td>Number</td>
+        <td>Action</td>
+    </tr>
+
+    @foreach (var item in ViewBag.WashingPointList)
+    {
+        <tr>
+            <td>@item.WPsubject</td>
+            <td>@item.WPsubsubject</td>
+            <td>@item.WPaddress</td>
+            <td>@item.WPnumber</td>
+            <td>
+                <span style="font-size:19px; align-content:center;"><a href="AddEditWashingPointDetails/@item.WPid">Edit</a></span>&nbsp;&nbsp;
+                <span style="font-size: 19px;align-content:center;"><a href="DeleteWashingPointDetails/@item.WPid">Delete</a></span>&nbsp;&nbsp;
+
+            </td>
+
+        </tr>
+    }
+</table>
+<br />
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">AboutUs Detail</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <!-- Right side content -->
+                <a href="~/AWAdmin/ManageAboutUsDetails/AddEditAboutUsDetails" class="btn btn-success">Add AboutUs Detail Details</a>
+            </div>
+        </div><!-- /.row -->
+        <!-- Left side content -->
+        <!-- Place your content here that you want to align to the left -->
+
+    </div><!-- /.container-fluid -->
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <td>Subject</td>
+        <td>Description</td>
+        <td>Image</td>
+        <td>Action</td>
+    </tr>
+
+    @foreach (var item in ViewBag.AboutList)
+    {
+        <tr>
+            <td>@item.AUsubject</td>
+            <td>@item.AUdescription</td>
+            <td><img src="@Url.Content(item.AUphoto)" alt="@item.AUphoto" height="100" width="100" /></td>
+            <td>
+                <span style="font-size:19px; align-content:center;"><a href="AddEditAboutUsDetails/@item.AUid">Edit</a></span>&nbsp;&nbsp;
+                <span style="font-size: 19px;align-content:center;"><a href="DeleteAboutUsDetails/@item.AUid">Delete</a></span>&nbsp;&nbsp;
+
+            </td>
+
+        </tr>
+    }
+</table>
+<br />
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Slider Detail</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <!-- Right side content -->
+                <a href="~/AWAdmin/ManageAboutUsDetails/AddEditSliderDetails" class="btn btn-success">Add Slider Details</a>
+            </div>
+        </div><!-- /.row -->
+        <!-- Left side content -->
+        <!-- Place your content here that you want to align to the left -->
+
+    </div><!-- /.container-fluid -->
+</div>
+
+
+<table class="table table-hover">
+    <tr>
+        <td>Subject</td>
+        <td>Sub-Subject</td>
+        <td>Description</td>
+        <td>Image</td>
+        <td>Action</td>
+    </tr>
+
+    @foreach (var item in ViewBag.SliderList)
+    {
+        <tr>
+            <td>@item.SLsubject</td>
+            <td>@item.SLsubsubject</td>
+            <td>@item.SLdescription</td>
+            <td><img src="@Url.Content(item.SLphoto)" alt="@item.SLphoto" height="100" width="100" /></td>
+
+            <td>
+                <span style="font-size:19px; align-content:center;"><a href="AddEditSliderDetails/@item.SLid">Edit</a></span>&nbsp;&nbsp;
+                <span style="font-size: 19px;align-content:center;"><a href="DeleteSliderDetails/@item.SLid">Delete</a></span>&nbsp;&nbsp;
+
+            </td>
+
+        </tr>
+    }
+</table>
+<br />
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">TeamMember Detail</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <!-- Right side content -->
+                <a href="~/AWAdmin/ManageAboutUsDetails/AddEditTeamMembersDetails" class="btn btn-success">Add TeamMember Details</a>
+            </div>
+        </div><!-- /.row -->
+        <!-- Left side content -->
+        <!-- Place your content here that you want to align to the left -->
+
+    </div><!-- /.container-fluid -->
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <td>Name</td>
+        <td>Profession</td>
+        <td>Image</td>
+        <td>Action</td>
+    </tr>
+
+    @foreach (var item in ViewBag.TeamList)
+    {
+        <tr>
+            <td>@item.TMname</td>
+            <td>@item.TMprofession</td>
+            <td><img src="@Url.Content(item.TMphoto)" alt="@item.TMphoto" height="100" width="100" /></td>
+            <td>
+                <span style="font-size:19px; align-content:center;"><a href="AddEditTeamMembersDetails/@item.TMid">Edit</a></span>&nbsp;&nbsp;
+                <span style="font-size: 19px;align-content:center;"><a href="DeleteTeamMembersDetails/@item.TMid">Delete</a></span>&nbsp;&nbsp;
+
+            </td>
+
+        </tr>
+    }
+</table>
+
+

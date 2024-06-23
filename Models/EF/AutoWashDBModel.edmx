@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AutoWashDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_AboutUsDetails">
+          <Key>
+            <PropertyRef Name="AUid" />
+          </Key>
+          <Property Name="AUid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AUsubject" Type="varchar" MaxLength="500" />
+          <Property Name="AUdescription" Type="varchar" MaxLength="500" />
+          <Property Name="AUphoto" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_Admin_Detail">
+          <Key>
+            <PropertyRef Name="aid" />
+          </Key>
+          <Property Name="aid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aname" Type="nchar" MaxLength="50" />
+          <Property Name="aemail" Type="nchar" MaxLength="25" />
+          <Property Name="apss" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_basiccleaning">
+          <Key>
+            <PropertyRef Name="bid" />
+          </Key>
+          <Property Name="bid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bplan" Type="nchar" MaxLength="50" />
+          <Property Name="bprice" Type="nchar" MaxLength="100" />
+          <Property Name="bservices" Type="nchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_complexcleaning">
+          <Key>
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cplan" Type="nchar" MaxLength="50" />
+          <Property Name="cprice" Type="nchar" MaxLength="100" />
+          <Property Name="cservices" Type="nchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_Contact1">
+          <Key>
+            <PropertyRef Name="cid1" />
+          </Key>
+          <Property Name="cid1" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cname1" Type="nchar" MaxLength="50" />
+          <Property Name="cemail1" Type="nchar" MaxLength="50" />
+          <Property Name="csubject1" Type="nchar" MaxLength="40" />
+          <Property Name="cmessage1" Type="nchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_Customer_Plan_Request">
+          <Key>
+            <PropertyRef Name="CPid" />
+          </Key>
+          <Property Name="CPid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPname" Type="nchar" MaxLength="50" />
+          <Property Name="CPplan" Type="nchar" MaxLength="50" />
+          <Property Name="CPprice" Type="nchar" MaxLength="100" />
+          <Property Name="CPservices" Type="nchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_ManageContactDetails">
+          <Key>
+            <PropertyRef Name="mid" />
+          </Key>
+          <Property Name="mid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mopeninghours" Type="varchar" MaxLength="100" />
+          <Property Name="mnumber" Type="varchar" MaxLength="100" />
+          <Property Name="memail" Type="varchar" MaxLength="100" />
+          <Property Name="maddress" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_premiumcleaning">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pplan" Type="nchar" MaxLength="50" />
+          <Property Name="pprice" Type="nchar" MaxLength="100" />
+          <Property Name="pservices" Type="nchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tbl_services">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sname" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_SliderDetails">
+          <Key>
+            <PropertyRef Name="SLid" />
+          </Key>
+          <Property Name="SLid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SLsubject" Type="varchar" MaxLength="500" />
+          <Property Name="SLsubsubject" Type="varchar" MaxLength="500" />
+          <Property Name="SLdescription" Type="varchar" MaxLength="500" />
+          <Property Name="SLphoto" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_TeamMemberDetails">
+          <Key>
+            <PropertyRef Name="TMid" />
+          </Key>
+          <Property Name="TMid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TMname" Type="varchar" MaxLength="500" />
+          <Property Name="TMprofession" Type="varchar" MaxLength="500" />
+          <Property Name="TMphoto" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_UserRequest">
+          <Key>
+            <PropertyRef Name="rid" />
+          </Key>
+          <Property Name="rid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rname" Type="nchar" MaxLength="500" />
+          <Property Name="remail" Type="nchar" MaxLength="500" />
+          <Property Name="rdes" Type="nchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbl_WashingPointDetails">
+          <Key>
+            <PropertyRef Name="WPid" />
+          </Key>
+          <Property Name="WPid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WPsubject" Type="varchar" MaxLength="500" />
+          <Property Name="WPsubsubject" Type="varchar" MaxLength="500" />
+          <Property Name="WPaddress" Type="varchar" MaxLength="500" />
+          <Property Name="WPnumber" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="AutoWashDBModelStoreContainer">
+          <EntitySet Name="tbl_AboutUsDetails" EntityType="Self.tbl_AboutUsDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Admin_Detail" EntityType="Self.tbl_Admin_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_basiccleaning" EntityType="Self.tbl_basiccleaning" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_complexcleaning" EntityType="Self.tbl_complexcleaning" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Contact1" EntityType="Self.tbl_Contact1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Customer_Plan_Request" EntityType="Self.tbl_Customer_Plan_Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ManageContactDetails" EntityType="Self.tbl_ManageContactDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_premiumcleaning" EntityType="Self.tbl_premiumcleaning" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_services" EntityType="Self.tbl_services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SliderDetails" EntityType="Self.tbl_SliderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_TeamMemberDetails" EntityType="Self.tbl_TeamMemberDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_UserRequest" EntityType="Self.tbl_UserRequest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_WashingPointDetails" EntityType="Self.tbl_WashingPointDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutoWashDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AutoWashDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Contact1" EntityType="AutoWashDBModel.tbl_Contact1" />
+          <EntitySet Name="tbl_services" EntityType="AutoWashDBModel.tbl_services" />
+          <EntitySet Name="tbl_Admin_Detail" EntityType="AutoWashDBModel.tbl_Admin_Detail" />
+          <EntitySet Name="tbl_basiccleaning" EntityType="AutoWashDBModel.tbl_basiccleaning" />
+          <EntitySet Name="tbl_complexcleaning" EntityType="AutoWashDBModel.tbl_complexcleaning" />
+          <EntitySet Name="tbl_premiumcleaning" EntityType="AutoWashDBModel.tbl_premiumcleaning" />
+          <EntitySet Name="tbl_Customer_Plan_Request" EntityType="AutoWashDBModel.tbl_Customer_Plan_Request" />
+          <EntitySet Name="tbl_AboutUsDetails" EntityType="AutoWashDBModel.tbl_AboutUsDetails" />
+          <EntitySet Name="tbl_SliderDetails" EntityType="AutoWashDBModel.tbl_SliderDetails" />
+          <EntitySet Name="tbl_TeamMemberDetails" EntityType="AutoWashDBModel.tbl_TeamMemberDetails" />
+          <EntitySet Name="tbl_WashingPointDetails" EntityType="AutoWashDBModel.tbl_WashingPointDetails" />
+          <EntitySet Name="tbl_ManageContactDetails" EntityType="AutoWashDBModel.tbl_ManageContactDetails" />
+          <EntitySet Name="tbl_UserRequest" EntityType="AutoWashDBModel.tbl_UserRequest" />
+        </EntityContainer>
+        <EntityType Name="tbl_Contact1">
+          <Key>
+            <PropertyRef Name="cid1" />
+          </Key>
+          <Property Name="cid1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cname1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="cemail1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="csubject1" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="cmessage1" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_services">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sname" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Admin_Detail">
+          <Key>
+            <PropertyRef Name="aid" />
+          </Key>
+          <Property Name="aid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="aemail" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="apss" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_basiccleaning">
+          <Key>
+            <PropertyRef Name="bid" />
+          </Key>
+          <Property Name="bid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bplan" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="bprice" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="bservices" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_complexcleaning">
+          <Key>
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cplan" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="cprice" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="cservices" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_premiumcleaning">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pplan" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="pprice" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="pservices" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Customer_Plan_Request">
+          <Key>
+            <PropertyRef Name="CPid" />
+          </Key>
+          <Property Name="CPid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CPplan" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CPprice" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CPservices" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_AboutUsDetails">
+          <Key>
+            <PropertyRef Name="AUid" />
+          </Key>
+          <Property Name="AUid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AUsubject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AUdescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AUphoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_SliderDetails">
+          <Key>
+            <PropertyRef Name="SLid" />
+          </Key>
+          <Property Name="SLid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SLsubject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SLsubsubject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SLdescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SLphoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_TeamMemberDetails">
+          <Key>
+            <PropertyRef Name="TMid" />
+          </Key>
+          <Property Name="TMid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TMname" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TMprofession" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TMphoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_WashingPointDetails">
+          <Key>
+            <PropertyRef Name="WPid" />
+          </Key>
+          <Property Name="WPid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WPsubject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="WPsubsubject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="WPaddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="WPnumber" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_ManageContactDetails">
+          <Key>
+            <PropertyRef Name="mid" />
+          </Key>
+          <Property Name="mid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mopeninghours" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mnumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="memail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="maddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_UserRequest">
+          <Key>
+            <PropertyRef Name="rid" />
+          </Key>
+          <Property Name="rid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rname" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="remail" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="rdes" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AutoWashDBModelStoreContainer" CdmEntityContainer="AutoWashDBEntities">
+          <EntitySetMapping Name="tbl_Contact1">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_Contact1">
+              <MappingFragment StoreEntitySet="tbl_Contact1">
+                <ScalarProperty Name="cmessage1" ColumnName="cmessage1" />
+                <ScalarProperty Name="csubject1" ColumnName="csubject1" />
+                <ScalarProperty Name="cemail1" ColumnName="cemail1" />
+                <ScalarProperty Name="cname1" ColumnName="cname1" />
+                <ScalarProperty Name="cid1" ColumnName="cid1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_services">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_services">
+              <MappingFragment StoreEntitySet="tbl_services">
+                <ScalarProperty Name="sname" ColumnName="sname" />
+                <ScalarProperty Name="sid" ColumnName="sid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Admin_Detail">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_Admin_Detail">
+              <MappingFragment StoreEntitySet="tbl_Admin_Detail">
+                <ScalarProperty Name="apss" ColumnName="apss" />
+                <ScalarProperty Name="aemail" ColumnName="aemail" />
+                <ScalarProperty Name="aname" ColumnName="aname" />
+                <ScalarProperty Name="aid" ColumnName="aid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_basiccleaning">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_basiccleaning">
+              <MappingFragment StoreEntitySet="tbl_basiccleaning">
+                <ScalarProperty Name="bservices" ColumnName="bservices" />
+                <ScalarProperty Name="bprice" ColumnName="bprice" />
+                <ScalarProperty Name="bplan" ColumnName="bplan" />
+                <ScalarProperty Name="bid" ColumnName="bid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_complexcleaning">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_complexcleaning">
+              <MappingFragment StoreEntitySet="tbl_complexcleaning">
+                <ScalarProperty Name="cservices" ColumnName="cservices" />
+                <ScalarProperty Name="cprice" ColumnName="cprice" />
+                <ScalarProperty Name="cplan" ColumnName="cplan" />
+                <ScalarProperty Name="cid" ColumnName="cid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_premiumcleaning">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_premiumcleaning">
+              <MappingFragment StoreEntitySet="tbl_premiumcleaning">
+                <ScalarProperty Name="pservices" ColumnName="pservices" />
+                <ScalarProperty Name="pprice" ColumnName="pprice" />
+                <ScalarProperty Name="pplan" ColumnName="pplan" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Customer_Plan_Request">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_Customer_Plan_Request">
+              <MappingFragment StoreEntitySet="tbl_Customer_Plan_Request">
+                <ScalarProperty Name="CPservices" ColumnName="CPservices" />
+                <ScalarProperty Name="CPprice" ColumnName="CPprice" />
+                <ScalarProperty Name="CPplan" ColumnName="CPplan" />
+                <ScalarProperty Name="CPname" ColumnName="CPname" />
+                <ScalarProperty Name="CPid" ColumnName="CPid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AboutUsDetails">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_AboutUsDetails">
+              <MappingFragment StoreEntitySet="tbl_AboutUsDetails">
+                <ScalarProperty Name="AUphoto" ColumnName="AUphoto" />
+                <ScalarProperty Name="AUdescription" ColumnName="AUdescription" />
+                <ScalarProperty Name="AUsubject" ColumnName="AUsubject" />
+                <ScalarProperty Name="AUid" ColumnName="AUid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SliderDetails">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_SliderDetails">
+              <MappingFragment StoreEntitySet="tbl_SliderDetails">
+                <ScalarProperty Name="SLphoto" ColumnName="SLphoto" />
+                <ScalarProperty Name="SLdescription" ColumnName="SLdescription" />
+                <ScalarProperty Name="SLsubsubject" ColumnName="SLsubsubject" />
+                <ScalarProperty Name="SLsubject" ColumnName="SLsubject" />
+                <ScalarProperty Name="SLid" ColumnName="SLid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_TeamMemberDetails">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_TeamMemberDetails">
+              <MappingFragment StoreEntitySet="tbl_TeamMemberDetails">
+                <ScalarProperty Name="TMphoto" ColumnName="TMphoto" />
+                <ScalarProperty Name="TMprofession" ColumnName="TMprofession" />
+                <ScalarProperty Name="TMname" ColumnName="TMname" />
+                <ScalarProperty Name="TMid" ColumnName="TMid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_WashingPointDetails">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_WashingPointDetails">
+              <MappingFragment StoreEntitySet="tbl_WashingPointDetails">
+                <ScalarProperty Name="WPnumber" ColumnName="WPnumber" />
+                <ScalarProperty Name="WPaddress" ColumnName="WPaddress" />
+                <ScalarProperty Name="WPsubsubject" ColumnName="WPsubsubject" />
+                <ScalarProperty Name="WPsubject" ColumnName="WPsubject" />
+                <ScalarProperty Name="WPid" ColumnName="WPid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ManageContactDetails">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_ManageContactDetails">
+              <MappingFragment StoreEntitySet="tbl_ManageContactDetails">
+                <ScalarProperty Name="maddress" ColumnName="maddress" />
+                <ScalarProperty Name="memail" ColumnName="memail" />
+                <ScalarProperty Name="mnumber" ColumnName="mnumber" />
+                <ScalarProperty Name="mopeninghours" ColumnName="mopeninghours" />
+                <ScalarProperty Name="mid" ColumnName="mid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_UserRequest">
+            <EntityTypeMapping TypeName="AutoWashDBModel.tbl_UserRequest">
+              <MappingFragment StoreEntitySet="tbl_UserRequest">
+                <ScalarProperty Name="rdes" ColumnName="rdes" />
+                <ScalarProperty Name="remail" ColumnName="remail" />
+                <ScalarProperty Name="rname" ColumnName="rname" />
+                <ScalarProperty Name="rid" ColumnName="rid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

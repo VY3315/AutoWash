@@ -1,0 +1,47 @@
+﻿@model AutoWash.Models.EF.AllDetails
+@{
+    ViewBag.Title = "TeamMember";
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Team Member</h2>
+            </div>
+            <div class="col-12">
+                <a href="">Home</a>
+                <a href="">Team</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Team Start -->
+<div class="team">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Meet Our Team</p>
+            <h2>Our Engineers & Workers</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.TeamMember)
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="@Url.Content(item.TMphoto)" alt="Team Image">
+                        </div>
+                        <div class="team-text">
+                            <h2>@item.TMname</h2>
+                            <p>@item.TMprofession</p>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Team End -->

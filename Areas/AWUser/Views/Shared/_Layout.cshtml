@@ -1,0 +1,185 @@
+﻿@model AutoWash.Models.EF.AllDetails
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AutoWash - Car Wash Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="~/Areas/car-wash-template/lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link href="~/Areas/car-wash-template/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/Areas/car-wash-template/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Template Stylesheet -->
+    <link href="~/Areas/car-wash-template/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top Bar Start -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-12">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>Auto<span>Wash</span></h1>
+                            <!-- <img src="~/Areas/car-wash-template/img/logo.jpg" alt="Logo"> -->
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-7 d-none d-lg-block">
+                    <div class="row">
+
+                        <div class="col-4">
+                            <div class="top-bar-item">
+                                <div class="top-bar-icon">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="top-bar-text">
+                                    <h3>Opening Hour</h3>
+                                    <p>@Model.LastContactUs.mopeninghours</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="top-bar-item">
+                                <div class="top-bar-icon">
+                                    <i class="fa fa-phone-alt"></i>
+                                </div>
+                                <div class="top-bar-text">
+                                    <h3>Call Us</h3>
+                                    <p>@Model.LastContactUs.mnumber</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="top-bar-item">
+                                <div class="top-bar-icon">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="top-bar-text">
+                                    <h3>Email Us</h3>
+                                    <p>@Model.LastContactUs.memail</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Bar End -->
+    <!-- Nav Bar Start -->
+    <div class="nav-bar">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a href="~/AWUser/Home/Index" class="nav-item nav-link">Home</a>
+                        <a href="~/AWUser/Home/Price" class="nav-item nav-link">Price</a>
+                        <a href="~/AWUser/Home/WashingPoints" class="nav-item nav-link">Washing Points</a>
+                        <a href="~/AWUser/Home/TeamMember" class="nav-item nav-link">Team Member</a>
+                        <a href="~/AWUser/Home/contact" class="nav-item nav-link">Contact</a>
+                        <a href="~/AWUser/Home/About" class="nav-item nav-link">About</a>
+                        <a href="~/AWAdmin/AdminLogin/AdminLogin" class="nav-item nav-link">Admin Login</a>
+
+
+                    </div>
+                    @*<div class="ml-auto">
+                            <a class="btn btn-custom" href="#">Get Appointment</a>
+                        </div>*@
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+
+    @RenderBody()
+
+
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h2>Get In Touch</h2>
+
+
+                        <p><i class="fa fa-map-marker-alt"></i>@Model.LastContactUs.maddress</p>
+                        <p><i class="fa fa-phone-alt"></i>@Model.LastContactUs.mnumber</p>
+                        <p><i class="fa fa-envelope"></i>@Model.LastContactUs.memail</p>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+
+                </div>
+
+                @*~/AWUser/Home/Index
+                    ~/AWUser/Home/Price
+                    ~/AWUser/Home/WashingPoints
+                    ~/AWUser/Home/TeamMember
+                    ~/AWUser/Home/contact
+                    ~/AWUser/Home/About*@
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-link">
+                        <h2>Popular Links</h2>
+                        <a href="~/AWUser/Home/Index">Home</a>
+                        <a href="~/AWUser/Home/Price">Price</a>
+                        <a href="~/AWUser/Home/WashingPoints">Service Points</a>
+                        <a href="~/AWUser/Home/contact">Contact Us</a>
+                        <a href="~/AWUser/Home/About">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="container copyright">
+                <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved. Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+            </div>*@
+    </div>
+    <!-- Footer End -->
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Areas/car-wash-template/lib/easing/easing.min.js"></script>
+    <script src="~/Areas/car-wash-template/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/Areas/car-wash-template/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/Areas/car-wash-template/lib/counterup/counterup.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="~/Areas/car-wash-template/mail/jqBootstrapValidation.min.js"></script>
+    <script src="~/Areas/car-wash-template/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/Areas/car-wash-template/js/main.js"></script>
+</body>
+</html>

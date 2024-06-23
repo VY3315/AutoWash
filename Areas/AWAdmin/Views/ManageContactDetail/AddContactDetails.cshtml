@@ -1,0 +1,138 @@
+﻿@model AutoWash.Models.EF.tbl_ManageContactDetails
+@{
+    ViewBag.Title = "AddContactDetails";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Add Contact Details</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/AWAdmin/Dashboard/Index">Home</a></li>
+                    <li class="breadcrumb-item active">ManageContactDetail</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+@*<h1 style="padding:20px 20px 0px 20px;">Add Contact Details</h1>*@
+
+@if (Model != null && Model.mid > 0)
+{
+    <form action="AddContactDetails" method="post" style="padding :20px;">
+        <div class="form-group row" hidden>
+            <label for="mid" class="col-sm-2 col-form-label">id</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="mid" value="@Model.mid" name="mid">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mopeninghours" class="col-sm-2 col-form-label">Opening Hours</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="mopeninghours" name="mopeninghours" value="@Model.mopeninghours" placeholder="Please Enter Opening Hours ( Ex: Mon-Fri, 8.00-9.00 )">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mnumber" class="col-sm-2 col-form-label">Contact Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="mnumber" name="mnumber" value="@Model.mnumber" placeholder="Please Enter Contact Number">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="memail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="memail" name="memail" value="@Model.memail" placeholder="Please Enter Email Id">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="maddress" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="maddress" name="maddress" value="@Model.maddress" placeholder="Please Enter Address">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-info">Update</button>
+            </div>
+        </div>
+
+    </form>
+}
+else
+{
+
+    <form action="AddContactDetails" method="post" style="padding :20px;">
+
+        <div class="form-group row">
+            <label for="mopeninghours" class="col-sm-2 col-form-label">Opening Hours</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="mopeninghours" name="mopeninghours" placeholder="Please Enter Opening Hours ( Ex: Mon-Fri, 8.00-9.00 )">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mnumber" class="col-sm-2 col-form-label">Contact Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="mnumber" name="mnumber" placeholder="Please Enter Contact Number">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="memail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="memail" name="memail" placeholder="Please Enter Email Id">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="maddress" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="maddress" name="maddress" placeholder="Please Enter Address">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-info">Submit</button>
+            </div>
+        </div>
+
+    </form>
+}
+
+
+@if (Model.mid == 0)
+{
+    <h1 style="padding-left:20px">Status</h1>
+    <br />
+    <table class="table table-hover">
+        <tr>
+            <td>Opening Hours</td>
+            <td>Contact Number</td>
+            <td>Email</td>
+            <td>Address</td>
+            <td>Action</td>
+        </tr>
+
+        @foreach (var item in ViewBag.ContactList)
+        {
+            <tr>
+                <td>@item.mopeninghours</td>
+                <td>@item.mnumber</td>
+                <td>@item.memail</td>
+                <td>@item.maddress</td>
+                <td>
+                    <span style="font-size:19px; align-content:center;"><a href="AddContactDetails/@item.mid">Edit</a></span>&nbsp;&nbsp;
+                    <span style="font-size: 19px;align-content:center;"><a href="DeleteContactDetails/@item.mid">Delete</a></span>&nbsp;&nbsp;
+                </td>
+
+            </tr>
+        }
+    </table>
+}
+

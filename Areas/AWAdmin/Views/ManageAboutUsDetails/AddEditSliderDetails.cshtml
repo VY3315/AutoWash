@@ -1,0 +1,118 @@
+﻿@model AutoWash.Models.EF.tbl_SliderDetails
+@{
+    ViewBag.Title = "AddEditSliderDetails";
+}
+
+@*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Slider Detail</h1>
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="~/AWAdmin/Dashboard/Index">Home</a></li>
+                    <li class="breadcrumb-item active">SliderDetail</li>
+                </ol>
+            </div>
+            <!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+
+<form action="AddEditSliderDetails" method="post" enctype="multipart/form-data" style="padding: 20px 20px 0px 20px;">
+
+    @if (Model != null && Model.SLid > 0)
+    {
+        <input type="text" class="form-control" id="SLid" name="SLid" placeholder="Pls Enter Washing Point Subject" value="@Model.SLid" hidden>
+        <div class="form-group row">
+            <label for="SLsubject" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="SLsubject" name="SLsubject" placeholder="Pls Enter Slider Image Subject" value="@Model.SLsubject" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="SLsubsubject" class="col-sm-2 col-form-label">Sub-Subject</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="SLsubsubject" name="SLsubsubject" placeholder="Pls Enter Slider Image Sub-Subject" value="@Model.SLsubsubject" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="SLdescription" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="SLdescription" name="SLdescription" placeholder="Pls Enter Description" value="@Model.SLdescription" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="SLphoto_ufile" class="col-sm-2 col-form-label">Slider Image</label>
+            <div class="col-sm-10">
+                <input type="hidden" name="SLimg" value="@Model.SLphoto" />
+                <img src="@Url.Content(Model.SLphoto)" alt="@Model.SLphoto" hight="300" width="300" />
+                <input type="file" class="form-button" id="SLphoto_ufile" name="SLphoto_ufile" required>
+            </div>
+        </div>
+
+        <br />
+        <div class="form-group row" style="padding:0px">
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-info">Update</button>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="form-group row">
+            <label for="SLsubject" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="SLsubject" name="SLsubject" placeholder="Pls Enter Slider Image Subject" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="SLsubsubject" class="col-sm-2 col-form-label">Sub-Subject</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="SLsubsubject" name="SLsubsubject" placeholder="Pls Enter Slider Image Sub-Subject" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="SLdescription" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="SLdescription" name="SLdescription" placeholder="Pls Enter Description" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="SLphoto_ufile" class="col-sm-2 col-form-label">Slider Image</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-button" id="SLphoto_ufile" name="SLphoto_ufile" required>
+            </div>
+        </div>
+
+        <div class="content-header">
+            <div @*class="container-fluid"*@>
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-info">Submit</button>
+
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <!-- Right side content -->
+                        <a href="~/AWAdmin/ManageAboutUsDetails/ViewAllDetails" class="btn btn-success">View List</a>
+                    </div>
+                </div><!-- /.row -->
+                <!-- Left side content -->
+                <!-- Place your content here that you want to align to the left -->
+
+            </div><!-- /.container-fluid -->
+        </div>
+    }
+</form>
+
